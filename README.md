@@ -52,4 +52,4 @@ pytest
     - Polars has the `.collect()` method that materializes a full dataframe.
 
 ## Future Plans for This Benchmark
-Just playing around.
+Re-running it upon major releases. Adding other alternatives.
