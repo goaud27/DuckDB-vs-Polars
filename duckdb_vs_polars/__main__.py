@@ -8,7 +8,12 @@ def main():
     outputs = []
     this_dir = pathlib.Path(__file__).parent
 
-    for benchmark in sorted(this_dir.glob('*[duckdb|polars|pandas].py')):
+    exts = ['*duckdb.py', '*polars.py', '*pandas.py']
+    libs = []
+    for ext in exts:
+        libs.extend(this_dir.glob(ext))
+
+    for benchmark in sorted(libs):
         module_name = func_name = benchmark.with_suffix('').name
         module = importlib.import_module(module_name)
         benchmark_function = getattr(module, func_name)
