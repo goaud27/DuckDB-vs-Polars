@@ -3,7 +3,7 @@ Unofficial Benchmarking on Performance Difference Between DuckDB, Pandas and Pol
 Here's [the link to the blog post](https://medium.com/@yukithejapanese/duckdb-vs-polars-which-one-is-faster-61e73a7680e0) of the original benchmark.
 
 ## Data
-[2021 Yellow Taxi Trip](https://data.cityofnewyork.us/Transportation/2021-Yellow-Taxi-Trip-Data/m6nq-qud6/about_data) that contains 30M rows with 18 columns. It's about 3GB in size on disk. 
+[2021 Yellow Taxi Trip](https://data.cityofnewyork.us/Transportation/2021-Yellow-Taxi-Trip-Data/m6nq-qud6/about_data) that contains 30M rows with 18 columns. It's about 3GB in size on disk. The same data in Parquet format was downloaded from [this website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
 ## Method
 Using the following operations for the benchmark:
@@ -21,7 +21,13 @@ I did the benchmark on an `Apple M1 MAX MacBook Pro 2021` with `32GB RAM`.
 \
 The same tests, but with the input split into 12 Parquet files (by month):
 \
+![output_parquet_2021](./output_parquet_2021.png)
+\
+The same tests, but with 2021 - 2022 data:
+\
 ![output_parquet](./output_parquet.png)
+\
+N.B. DuckDB's 'join' test result appear to jump significantly from iteration to iteration (between a bit better than pandas and much worse than pandas).
 
 ## How to Run This Benchmark on Your Own
 1. Download the csv file at: [2021 Yellow Taxi Trip](https://data.cityofnewyork.us/Transportation/2021-Yellow-Taxi-Trip-Data/m6nq-qud6/about_data).
