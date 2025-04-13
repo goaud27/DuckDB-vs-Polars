@@ -18,6 +18,10 @@ I did the benchmark on an `Apple M1 MAX MacBook Pro 2021` with `32GB RAM`.
 \
 \
 ![output](./output.png)
+\
+The same tests, but with the input split into 12 Parquet files (by month):
+\
+![output_parquet](./output_parquet.png)
 
 ## How to Run This Benchmark on Your Own
 1. Download the csv file at: [2021 Yellow Taxi Trip](https://data.cityofnewyork.us/Transportation/2021-Yellow-Taxi-Trip-Data/m6nq-qud6/about_data).
