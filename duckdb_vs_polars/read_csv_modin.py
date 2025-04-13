@@ -1,6 +1,6 @@
 import os
 
-os.environ["MODIN_ENGINE"] = "dask"
+os.environ["MODIN_ENGINE"] = "ray"
 
 import modin.pandas as pd
 

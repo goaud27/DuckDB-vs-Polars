@@ -8,7 +8,7 @@ def main():
     outputs = []
     this_dir = pathlib.Path(__file__).parent
 
-    exts = ['*duckdb.py', '*polars.py', '*pandas.py']
+    exts = ['*duckdb.py', '*polars.py', '*pandas.py', '*modin.py']
     libs = []
     for ext in exts:
         libs.extend(this_dir.glob(ext))
